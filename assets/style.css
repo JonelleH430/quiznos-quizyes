@@ -3,3 +3,27 @@
     margin: 0;
     padding: 0;
 }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
+    margin: 35px 0;
+}
+:root {
+    --hoverColor:  rgb(180, 57, 119);
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: .5fr  .85fr .5fr;
+    grid-template-rows: .5fr;
+}
+        
+.home-title {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2 ;
+    text-align: center;
+    font-size: 40px;
+    margin: 10px 0;
+}
