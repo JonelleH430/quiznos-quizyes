@@ -21,9 +21,11 @@ var timer = function() {
     }, 1000);
     
     console.log("TIMER STARTED")
-    if (end === true){
+    if (end === true) {
+        
         timerEl.textContent = timeLeft;
     }
+
 }
 
 var highScores = function() {
@@ -125,7 +127,7 @@ var enterScore = function() {
     inputContainer.appendChild(submit);
 }
 
-var questionFive = function() {
+var questionFive = function(){
 
     var removeWrong = function() {;
         questionContainer.remove();
