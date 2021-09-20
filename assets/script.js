@@ -105,3 +105,267 @@ var enterScore = function() {
     initalInput.setAttribute("name", "input");
     initalInput.setAttribute("type", "text");
     inputContainer.appendChild(initalInput);
+
+    var submit = document.createElement("button");
+    submit.textContent = "Submit";
+    submit.className = "submit-btn";
+    submit.addEventListener("click", event => {
+
+        var initals = document.getElementById("input").value;
+    
+        localStorage.setItem("initals", initals);
+    
+        localStorage.setItem("score", totalPoints);
+    
+        doneContainer.remove();
+    
+        highScores();
+    })
+    
+    inputContainer.appendChild(submit);
+}
+
+var questionFive = function() {
+
+    var removeWrong = function() {;
+        questionContainer.remove();
+        enterScore();
+        console.log("Wrong Answer");
+        end = true;
+    }
+    
+    var questionContainer = document.createElement("div");
+    questionContainer.className = "question-container";
+    mainEl.appendChild(questionContainer);
+
+    
+    var question = document.createElement("h1");
+    question.className = "question";
+    question.textContent = "HTML is a coding language used to create web pages";
+    questionContainer.appendChild(question);
+
+
+    var answerContainer = document.createElement("div");
+    answerContainer.className = "answer-container";
+    questionContainer.appendChild(answerContainer);
+    
+    var answerOne = document.createElement("button");
+    answerOne.className = "answer-One";
+    answerOne.textContent = "True";
+    answerContainer.appendChild(answerOne);
+    answerOne.addEventListener("click", event => {
+        points();
+        questionContainer.remove();
+        enterScore();
+        console.log("Right Answer`");
+        end = true;
+    })
+    
+    var answerTwo = document.createElement("button");
+    answerTwo.className = "answer-Two";
+    answerTwo.textContent = "False";
+    answerContainer.appendChild(answerTwo);
+    answerTwo.addEventListener("click", event => {
+        removeWrong();
+    })
+
+var questionFour = function() {
+
+    var removeWrong = function() {
+        timeLeft = timeLeft - 10;
+        questionContainer.remove();
+        questionFive();
+        console.log("Wrong Answer");
+        return timeLeft;
+    }
+    
+    var questionContainer = document.createElement("div");
+    questionContainer.className = "question-container";
+    mainEl.appendChild(questionContainer);
+
+    var question = document.createElement("h1");
+    question.className = "question";
+    question.textContent = "True or False: A web browser translates text-based HTML into a graphical web page";
+    questionContainer.appendChild(question);
+
+    var answerContainer = document.createElement("div");
+    answerContainer.className = "answer-container";
+    questionContainer.appendChild(answerContainer);
+            
+    var answerOne = document.createElement("button");
+    answerOne.className = "answer-One";
+    answerOne.textContent = "False";
+    answerContainer.appendChild(answerOne);
+    answerOne.addEventListener("click", event => {
+        removeWrong();
+    })
+       
+    var answerTwo = document.createElement("button");
+    answerTwo.className = "answer-Two";
+    answerTwo.textContent = "True";
+    answerContainer.appendChild(answerTwo);
+    answerTwo.addEventListener("click", event => {
+        questionContainer.remove();
+        questionFive();
+        console.log("Right Answer");
+        points();
+    })
+}
+
+var questionThree = function() {
+    
+    var removeWrong = function() {
+        timeLeft = timeLeft - 10;
+        questionContainer.remove();
+        questionFour();
+        console.log("Wrong Answer");
+    }
+        
+    var questionContainer = document.createElement("div");
+    questionContainer.className = "question-container";
+    mainEl.appendChild(questionContainer);
+
+    var question = document.createElement("h1");
+    question.className = "question";
+    question.textContent = "True or False: A hyperlink can be a word, phrase, or graphic";
+    questionContainer.appendChild(question);
+
+    var answerContainer = document.createElement("div");
+    answerContainer.className = "answer-container";
+    questionContainer.appendChild(answerContainer);
+            
+    var answerOne = document.createElement("button");
+    answerOne.className = "answer-One";
+    answerOne.textContent = "False";
+    answerContainer.appendChild(answerOne);
+    answerOne.addEventListener("click", event => {
+        removeWrong();
+    })
+ 
+    var answerTwo = document.createElement("button");
+    answerTwo.className = "answer-Two";
+    answerTwo.textContent = "True";
+    answerContainer.appendChild(answerFour);
+    answerTwo.addEventListener("click", event => {
+        questionContainer.remove();
+        questionTwo();
+        console.log("Right Answer");
+        points();
+    })
+}
+
+var questionFour = function() {
+        
+    var removeWrong = function() {
+        questionThree();
+        questionContainer.remove();
+        timeLeft = timeLeft - 10;
+    }
+    
+    var questionContainer = document.createElement("div");
+    questionContainer.className = "question-container";
+    mainEl.appendChild(questionContainer);
+
+    var question = document.createElement("h1");
+    question.className = "question";
+    question.textContent = "True or False: You must save a text file with a .html extention so a web browser can open it";
+    questionContainer.appendChild(question);
+
+    var answerContainer = document.createElement("div");
+    answerContainer.className = "answer-container";
+    questionContainer.appendChild(answerContainer);
+            
+    var answerOne = document.createElement("button");
+    answerOne.className = "answer-One";
+    answerOne.textContent = "False";
+    answerContainer.appendChild(answerOne);
+    answerOne.addEventListener("click", event => {
+        removeWrong();
+    });
+        
+    var answerTwo = document.createElement("button");
+    answerTwo.className = "answer-Two";
+    answerTwo.textContent = "True";
+    answerContainer.appendChild(answerTwo);
+    answerTwo.addEventListener("click", event => {
+        questionContainer.remove();
+        questionThree();
+        console.log("Right Answer");
+        points();
+    });
+   
+}
+
+var questionOne = function() {
+    
+    var removeWrong = function() {
+        timeLeft = timeLeft - 10;
+        questionContainer.remove();
+        questionTwo();
+        console.log("Wrong Answer");
+    }
+        
+    var questionContainer = document.createElement("div");
+    questionContainer.className = "question-container";
+    mainEl.appendChild(questionContainer);
+
+    var question = document.createElement("h1");
+    question.className = "question";
+    question.textContent = "True or false: A website's home page is typically named hompage.html";
+    questionContainer.appendChild(question);
+
+    var answerContainer = document.createElement("div");
+    answerContainer.className = "answer-container";
+    questionContainer.appendChild(answerContainer);
+            
+    var answerOne = document.createElement("button");
+    answerOne.className = "answer-One";
+    answerOne.textContent = "True";
+    answerContainer.appendChild(answerOne);
+    answerOne.addEventListener("click", event => {
+        removeWrong();
+    })
+        
+    var answerTwo = document.createElement("button");
+    answerTwo.className = "answer-Two";
+    answerTwo.textContent = "3. alerts";
+    answerContainer.appendChild(answerTwo);
+    answerTwo.addEventListener("click", event => {
+        questionContainer.remove();
+        questionTwo();
+        console.log("Right Answer");
+        points();
+    })
+}
+
+var start = function() {
+        
+    var container = document.createElement("div");
+    container.className = "home-container"
+    mainEl.appendChild(container);
+
+    var homeHeader = document.createElement("h1");
+    homeHeader.className = "home-title";
+    homeHeader.textContent = "Coding Quiz";
+    container.appendChild(homeHeader);
+
+    var homeParagraph = document.createElement("p");
+    homeParagraph.className = "home-text-p";
+    homeParagraph.textContent = "Answer the following questions within the time limit." +
+    "Every incorrect answer results in a penalty of -10 points!"
+    container.appendChild(homeParagraph);
+
+    var startQuizBtn = document.createElement("button");
+    startQuizBtn.className = "home-btn";
+    startQuizBtn.textContent = "Start Quiz";
+    container.appendChild(startQuizBtn);
+
+    startQuizBtn.addEventListener("click", event => {
+        timer();
+        startQuizBtn.remove();
+        homeHeader.remove();
+        homeParagraph.remove();
+        questionOne();
+    });
+
+    start();

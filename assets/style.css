@@ -128,48 +128,6 @@ header {
     border: 2px solid var(--hoverColor);
 }
 
-.answer-Three {
-    
-    grid-row: 3 / 4;
-    grid-column: 1 / 2;
-    max-width: 200px;
-    max-height: 50px;
-    text-align: left;
-    padding: 10px 15px;
-    margin: 5px 0;
-    color: white;
-    background-color: turquoise;
-    border: 2px solid turquoise;
-    border-radius: 5px;
-}
-
-.answer-Three:hover {
-    
-    background-color: var(--hoverColor);
-    border: 2px solid var(--hoverColor);
-}
-
-.answer-Four {
-    
-    grid-row: 4 / 5;
-    grid-column: 1 / 2;
-    max-width: 200px;
-    max-height: 50px;
-    text-align: left;
-    padding: 10px 15px;
-    margin: 5px 0;
-    color: white;
-    background-color: turquoise;
-    border: 2px solid turquoise;
-    border-radius: 5px;
-}
-
-.answer-Four:hover {
-    
-    background-color: var(--hoverColor);
-    border: 2px solid var(--hoverColor);
-}
-
 .done-container {
     
     display: grid;
